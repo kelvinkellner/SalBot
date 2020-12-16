@@ -106,13 +106,31 @@ no = [
 ]
 
 jokeKnockKnock = [
-    ['TODO: make knock knock jokes','punchline']
+    ['Lina.','Lina little little close and I\'ll tell you.'],
+    ['Hike.','Little did you know\nI write decent poetry\nHope you liked this joke.'],
+    ['Spell.','W-H-O.'],
+    ['Cash.','No thanks, but I\'d love some pecans.'],
+    ['Dwayne.','Dwayne the pool, I can\'t swim.'],
+    ['Beats.','Beats me.'],
+    ['Boo.','Why are you crying?'],
+    ['Doctor.','No, no, just the doctor.'],
+    ['Lettuce.','Lettuce in or we\'ll break the door down.']
 ]
 
 jokeInteractive = [
-    ['TODO: make interactive jokes','punchline']
+    ['Did you hear about the Italian chef that died?','He pasta way.'],
+    ['What do you call a dodgy neighbouurhood in Italy?','A spaghetto.'],
+    ['Where do pepperonis go on vacation?','The leaning tower of pizza.'],
+    ['How do you make a million dollars in the stock market?','Start with two million.'],
+    ['Why did the football coach go to the bank?','To get his quarterback.']
 ]
 
 jokeOneLiner = [
-    'Marco... That\'s the whole joke...'
+    'Marco... That\'s the whole joke...',
+    'I saw a bank that offered 24 Hour Banking. I didn\'t go in though, I don\'t have that kind of time.',
+    'A woman once tolder her friend, "I\'m responsible for making my husband a millionare." "Well what was he before he married you?" the friend asked. "A billionaire."',
+    'My bank loves me. They told me my credit card balance is outstanding.',
+    'An old lady in the bank told me to check her balance, so I pushed her over. She wasn\'t too happy about that.',
+    'I went to the bank to apply for a Personal Loan. Then they found out I wanted to become a rapper. So unfortunately, they didn\'t want to Post M\'lone.',
+    'How do you keep an idiot in suspense?'
 ]

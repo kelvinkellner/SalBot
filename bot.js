@@ -8,14 +8,15 @@ Object.keys(clientCommands).map(key => {
     client.commands.set(clientCommands[key].name, clientCommands[key]);
 });
 
-// Randomizer util for generating random speech interactions
-const randomizor = require("./randomizer");
+const { random } = require('./randomizer'); // Randomizer util for generating random speech interactions
+const config = require('./config.json'); // Delete for deployment
+const token = config.LOCAL_TOKEN; // Discord bot token
 
 // Prefixes
 const prefixes = ["sal","hey sal","sally boy","mr montenegro","salbot","sal bot","sal montenegro"];
 
 function setRandomActivity() {
-    client.user.setActivity(randomizor.random('activity'));
+    client.user.setActivity(random('activity'));
 }
   
 client.on('ready', () => {
@@ -54,8 +55,5 @@ process.on('unhandledRejection', error => {
 	console.error('Unhandled promise rejection:', error);
 });
 
-const config = require('./config.json');
-const { random } = require('./randomizer');
-
 // THIS  MUST  BE  THIS  WAY
-client.login(config.LOCAL_TOKEN); // BOT_TOKEN is the Client Secret      set to: process.env.BOT_TOKEN for Heroku deployment
+client.login(token); // BOT_TOKEN is the Client Secret      set to: process.env.BOT_TOKEN for Heroku deployment
