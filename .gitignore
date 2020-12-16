@@ -1,2 +1,6 @@
 # Don't upload tokens
 process.env
+
+# Ignore local node.js stuffs
+node_modules
+package-lock.json
