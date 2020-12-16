@@ -18,8 +18,8 @@ client.on('message', async message => {
     // Ignore messages from Sal and other bots
     if(message.author.bot) return;
 
-    // Check for prefix
-    if(message.startsWith(prefix)) {
+    // Parse commands
+    if(message.slice(0,prefix.length) === prefix) {
         // if (message.content === 'ping') {
         //     message.reply('pong');
         // }
