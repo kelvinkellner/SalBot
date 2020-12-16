@@ -1,10 +1,9 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
-const config = require("./config.json");
-
-// Access file containing random prompts, replies, and other conversational utilities
 const randomizor = require("./randomizer");
+
+const prefix = "Sal, ";
 
 function setRandomActivity() {
     client.user.setActivity(randomizor.random('activity'));
@@ -20,12 +19,16 @@ client.on('message', async message => {
     if(message.author.bot) return;
 
     // Check for prefix
-    if(message.startsWith(config.prefix)) {
+    if(message.startsWith(prefix)) {
         // if (message.content === 'ping') {
         //     message.reply('pong');
         // }
         message.reply(message.content);
     }
+});
+
+process.on('unhandledRejection', error => {
+	console.error('Unhandled promise rejection:', error);
 });
 
 // THIS  MUST  BE  THIS  WAY
