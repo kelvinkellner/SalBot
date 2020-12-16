@@ -30,7 +30,7 @@ module.exports = {
                 list = jokeOneLiner;
                 break;
             default:
-                Console.log('Error. Invalid randomizer code.');
+                console.log('Error. Invalid randomizer code.');
                 break;
           };
     
@@ -106,11 +106,11 @@ no = [
 ]
 
 jokeKnockKnock = [
-    'TODO: make knock knock jokes'
+    ['TODO: make knock knock jokes','punchline']
 ]
 
 jokeInteractive = [
-    'TODO: make interactive jokes'
+    ['TODO: make interactive jokes','punchline']
 ]
 
 jokeOneLiner = [
