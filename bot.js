@@ -20,9 +20,6 @@ client.on('message', async message => {
 
     // Parse commands
     if(message.content.startsWith(prefix)) {
-        // if (message.content === 'ping') {
-        //     message.reply('pong');
-        // }
         message.reply(message.content);
     }
 });
