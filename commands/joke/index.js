@@ -13,19 +13,18 @@ module.exports = {
 
             msg.channel.send('Knock knock');
 
-            const filter = m => m.content.author == msg.author;
-            // Errors: ['time'] treats ending because of the time limit as an error
-            msg.channel.awaitMessages(filter, { max: 1, time: 60000, errors: ['time'] })
-                .then(collected => console.log(collected.size))
-                .catch(e => msg.channel.send(e));//msg.channel.send('Man, you really don\'t want to hear my joke :( I\'ll just head out...'));
+            const filter = m => m.author == msg.author;
+            const collector = msg.channel.createMessageCollector(filter, { time: 60000 });
 
-            msg.channel.send(joke[0]);
-
-            msg.channel.awaitMessages(filter, { max: 1, time: 60000, errors: ['time'] })
-                .then(collected => console.log(collected.size))
-                .catch(e => msg.channel.send(e));
-
-            msg.channel.send(joke[1]);
+            let count = 0;
+            collector.on('collect', m => {
+                if(count <= 1) {
+                    msg.channel.send(joke[count]);
+                    count++;
+                } else {
+                    collector.stop();
+                }
+            });
 
         } else if(chance >= 0.35) {
             // Tells a knock-knock joke
@@ -33,11 +32,13 @@ module.exports = {
 
             msg.channel.send(joke[0]);
 
-            msg.channel.awaitMessages(filter, { max: 1, time: 60000, errors: ['time'] })
-                .then(collected => console.log(collected.size))
-                .catch(msg.channel.send(e => msg.channel.send(e)));
+            const filter = m => m.author == msg.author;
+            const collector = msg.channel.createMessageCollector(filter, { time: 60000 });
 
-            msg.channel.send(joke[1]);
+            collector.on('collect', m => {
+                msg.channel.send(joke[1]);
+                collector.stop();
+            });
 
         } else {
             // Tells a one-liner
