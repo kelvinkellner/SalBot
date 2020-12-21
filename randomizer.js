@@ -128,7 +128,6 @@ jokeInteractive = [
 jokeOneLiner = [
     'Marco... That\'s the whole joke...',
     'I saw a bank that offered 24 Hour Banking. I didn\'t go in though, I don\'t have that kind of time.',
-    'A woman once told her friend, "I\'m responsible for making my husband a millionare." "Well what was he before he married you?" the friend asked. "A billionaire."',
     'My bank loves me. They told me my credit card balance is outstanding.',
     'An old lady in the bank told me to check her balance, so I pushed her over. She wasn\'t too happy about that.',
     'I went to the bank to apply for a Personal Loan. Then they found out I wanted to become a rapper. So unfortunately, they didn\'t want to Post M\'lone.',
