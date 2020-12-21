@@ -9,8 +9,8 @@ Object.keys(clientCommands).map(key => {
 });
 
 const { random } = require('./randomizer'); // Randomizer util for generating random speech interactions
-const config = require('./config.json'); // Delete for deployment
-const token = config.LOCAL_TOKEN; // Discord bot token
+//const config = require('./config.json'); // Delete for deployment
+const token = process.env.BOT_TOKEN; //set to: process.env.BOT_TOKEN for Heroku deployment, set to: config.LOCAL_TOKEN for local testing
 
 // Prefixes
 const prefixes = ["sal","hey sal","sally boy","mr montenegro","salbot","sal bot","sal montenegro"];
@@ -56,4 +56,4 @@ process.on('unhandledRejection', error => {
 });
 
 // THIS  MUST  BE  THIS  WAY
-client.login(token); // BOT_TOKEN is the Client Secret      set to: process.env.BOT_TOKEN for Heroku deployment
+client.login(token); // BOT_TOKEN is the Client Secret
