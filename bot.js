@@ -43,7 +43,7 @@ client.on('message', async msg => {
         }
         else {
             try {
-                client.commands.get(command).execute(msg, { args, client, leftOvers });
+                client.commands.get(command).execute(msg, { args, leftOvers, client, token });
             } catch (error) {
                 console.error(error);
                 msg.reply('My bad G, there was some kind of error while I was trying to do that for you.');
