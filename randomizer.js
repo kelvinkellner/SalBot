@@ -53,7 +53,7 @@ activities = [
     'Checkers',
     'Chess',
     'The Piano',
-    'Guitar',
+    'The Guitar',
     'Soccer',
     'Rock Paper Scissors',
     'An Instrument',
