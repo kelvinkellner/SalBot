@@ -29,11 +29,12 @@ client.on('message', async msg => {
     if(msg.author.bot) return;
 
     // Parse commands
-    const start = msg.content.split(',').shift().replace(/(,|\.|!|\?)/g,"").toLowerCase();
+    const start = msg.content.split(',').shift();  //.replace(/(,|\.|!|\?)/g,"").toLowerCase();
+    const leftOvers = msg.content.slice(0,start.length+2);
     const args = msg.content.replace(/(,|\.|!|\?)/g,"").split(/ +/).slice(start.split(" ").length);
     args.forEach(function(value) { value = value.toLowerCase(); });
     console.log(args);
-    if(prefixes.includes(start)) {
+    if(prefixes.includes(start.replace(/(,|\.|!|\?)/g,"").toLowerCase())) {
         const command = args.shift().toLowerCase();
         console.info(`Called command: ${command}`);
 
@@ -42,7 +43,7 @@ client.on('message', async msg => {
         }
         else {
             try {
-                client.commands.get(command).execute(msg, args);
+                client.commands.get(command).execute(msg, { args, client, leftOvers });
             } catch (error) {
                 console.error(error);
                 msg.reply('My bad G, there was some kind of error while I was trying to do that for you.');

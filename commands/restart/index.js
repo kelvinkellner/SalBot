@@ -3,7 +3,7 @@ const { random } = require('../../randomizer');
 module.exports = {
     name: 'restart',
     description: 'Restart.',
-    execute(msg, args) {
+    execute(msg, { client }) {
       msg.reply(random('affirm'))
         .catch(error => msg.reply(`Sorry ${msg.author} I cannot be reset, because : ${error}`));
       client.destroy();
