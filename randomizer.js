@@ -51,12 +51,14 @@ activities = [
     'Patty Cake',
     'Tic-Tac-Toe',
     'Checkers',
+    'Chess',
     'The Piano',
     'Guitar',
     'Soccer',
     'Rock Paper Scissors',
     'An Instrument',
     'With His Nephews',
+    'Candy Crush Saga'
 ];
 
 goodbye = [
@@ -89,7 +91,7 @@ unkownCommand = [
     'I\'m not understanding you.',
     'I really don\'t get what you\'re saying to me rn.',
     'I haven\'t learned that command yet.',
-    'Downloading command from the interwebs... Nope can\'t find it.',
+    'Surfing the internet in search of that command... Nope can\'t find it.',
     'Not sure what that means.'
 ]
 
