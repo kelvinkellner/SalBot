@@ -12,7 +12,7 @@ const { random } = require('./randomizer'); // Randomizer util for generating ra
 const config = require('./config.json'); // Comment out for Heroku deployment
 const token = config.LOCAL_TOKEN; //set to: process.env.BOT_TOKEN for Heroku deployment, set to: config.LOCAL_TOKEN for local testing
 
-// Prefixes
+// Attention prefixes
 const prefixes = ['sal', 'hey sal', 'sally boy', 'mr montenegro', 'salbot', 'sal bot', 'sal montenegro'];
 
 // Set user activity for SalBot
@@ -26,14 +26,12 @@ client.on('ready', () => {
   setRandomActivity();
 });
 
-client.on('messageCreate', async msg => {
+client.on('message', msg => {
   // Ignore messages from bots
   if (msg.author.bot) return;
-
-  console.log(MessageChannel.content);
-
+  console.log(msg.content);
   // Parse commands
-  const start = msg.content.split(',').shift(); //.replace(/(,|\.|!|\?)/g,"").toLowerCase();
+  const start = msg.content.split(',').shift(); // Remove the attention prefix
   const leftOvers = msg.content.slice(0, start.length + 2);
   const args = msg.content
     .replace(/(,|\.|!|\?)/g, '')
@@ -46,7 +44,6 @@ client.on('messageCreate', async msg => {
   if (prefixes.includes(start.replace(/(,|\.|!|\?)/g, '').toLowerCase())) {
     const command = args.shift().toLowerCase();
     console.info(`Called command: ${command}`);
-
     if (!client.commands.has(command)) {
       msg.reply(random('unknown-command'));
     } else {
