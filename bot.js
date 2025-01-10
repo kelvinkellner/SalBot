@@ -10,7 +10,7 @@ Object.keys(clientCommands).map(key => {
 
 const { random } = require('./randomizer'); // Randomizer util for generating random speech interactions
 const config = require('./config.json'); // Comment out for Heroku deployment
-const token = config.json; //set to: process.env.BOT_TOKEN for Heroku deployment, set to: config.LOCAL_TOKEN for local testing
+const token = config.LOCAL_TOKEN; //set to: process.env.BOT_TOKEN for Heroku deployment, set to: config.LOCAL_TOKEN for local testing
 
 // Prefixes
 const prefixes = ['sal', 'hey sal', 'sally boy', 'mr montenegro', 'salbot', 'sal bot', 'sal montenegro'];
