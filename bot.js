@@ -15,18 +15,22 @@ const token = config.json; //set to: process.env.BOT_TOKEN for Heroku deployment
 // Prefixes
 const prefixes = ['sal', 'hey sal', 'sally boy', 'mr montenegro', 'salbot', 'sal bot', 'sal montenegro'];
 
+// Set user activity for SalBot
 function setRandomActivity() {
   client.user.setActivity(random('activity'));
 }
 
+// Start SalBot
 client.on('ready', () => {
   console.log('Sal is ready.');
   setRandomActivity();
 });
 
-client.on('message', async msg => {
-  // Ignore messages from Sal and other bots
+client.on('messageCreate', async msg => {
+  // Ignore messages from bots
   if (msg.author.bot) return;
+
+  console.log(MessageChannel.content);
 
   // Parse commands
   const start = msg.content.split(',').shift(); //.replace(/(,|\.|!|\?)/g,"").toLowerCase();
